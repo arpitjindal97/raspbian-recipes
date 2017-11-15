@@ -20,7 +20,7 @@ Give WiFi access to a Non-WiFi device.
  - [eth-to-wifi-route.sh](eth-to-wifi-route.sh)  -   Make it WiFi Router. (Will be available soon)
 
 
-Download them on to Raspberry. Please them at `/home/pi/`. 
+Download anyone one of it on to Raspberry. Place it at `/home/pi/`. 
 
 Open up `/home/pi/.config/lxsession/LXDE-pi/autostart` file
 
