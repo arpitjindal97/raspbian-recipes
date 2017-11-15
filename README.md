@@ -1,6 +1,7 @@
 # Raspbian Recipes
 
-This repo contains various scripts to configure for Raspberry Pi.
+This repo contains various scripts to configure for Raspberry Pi. 
+They can also be used with other Linux distributions by making slight changes.
 
 If you want to make your raspberry pi a router or something than you won't have to spent days to make it work. 
 You just have to grab right recipe and put it in correct place and install few basic packages. 
@@ -16,7 +17,7 @@ List of all recipes with decriptions
  - [wifi-to-eth-route.sh](wifi-to-eth-route.sh)  -   Share Raspberry WiFi with the device on Lan side.
 Give WiFi access to a Non-WiFi device.
 
- - [eth-to-wifi-route.sh](eth-to-wifi-route.sh)  -   Make it WiFi Router.
+ - [eth-to-wifi-route.sh](eth-to-wifi-route.sh)  -   Make it WiFi Router. (Will be available soon)
 
 
 Download them on to Raspberry. Please them at `/home/pi/`. 
@@ -70,3 +71,4 @@ It should look like this after filling network details
         psk="password_goes_here"
     }
     
+Any Suggestions and PRs are welcomed to make these recepies more useful.
