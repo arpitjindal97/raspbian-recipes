@@ -6,7 +6,7 @@ They can also be used with other Linux distributions by making slight changes.
 If you want to make your raspberry pi a router or something than you won't have to spent days to make it work. 
 You just have to grab right recipe and put it in correct place and install few basic packages. 
 
-## How to use script
+## How to use them
 
 First of all, make sure you have install `dnsmasq` because it the backbone of most of the recipes.
 
