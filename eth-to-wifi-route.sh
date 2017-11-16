@@ -21,6 +21,7 @@ wlan="wlan0"
 ssid="Arpit-Raspberry"
 psk="arpit1997"
 
+sudo killall wpa_supplicant &> /dev/null
 sudo rfkill unblock wlan &> /dev/null
 sleep 2
 
@@ -54,6 +55,8 @@ hw_mode=g\n\
 ieee80211n=1\n\
 wmm_enabled=1\n\
 macaddr_acl=0\n\
+ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]\n\
+channel=6\n\
 auth_algs=1\n\
 ignore_broadcast_ssid=0\n\
 wpa=2\n\
@@ -61,10 +64,5 @@ wpa_key_mgmt=WPA-PSK\n\
 wpa_passphrase=$psk\n\
 rsn_pairwise=CCMP" > /etc/hostapd/hostapd.conf
 
-sudo systemctl restart hostapd
-sudo systemctl status hostapd &> /dev/null
-if [ "$?" != 0 ];then
-	echo "Some Network Management tool is running, which is stopping" 
-	echo "hostapd to be configured."
-	echo "Please stop that and again run the script."
-fi
+sudo systemctl stop hostapd
+sudo hostapd /etc/hostapd/hostapd.conf &
