@@ -17,7 +17,7 @@ List of all recipes with decriptions
  - [wifi-to-eth-route.sh](wifi-to-eth-route.sh)  -   Share Raspberry WiFi with the device on Lan side.
 Give WiFi access to a Non-WiFi device.
 
- - [eth-to-wifi-route.sh](eth-to-wifi-route.sh)  -   Make it WiFi Router. (Will be available soon)
+ - [eth-to-wifi-route.sh](eth-to-wifi-route.sh)  -   Make it WiFi Router.
 
 
 Download anyone one of it on to Raspberry. Place it at `/home/pi/`. 
