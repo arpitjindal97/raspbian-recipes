@@ -30,6 +30,9 @@ sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 
 sudo ifconfig $eth $ip_address netmask $netmask
 
+# Remove default route created by dhcpcd
+sudo ip route del 0/0 dev $eth &> /dev/null
+
 sudo systemctl stop dnsmasq
 
 echo -e "interface=$eth\n\
