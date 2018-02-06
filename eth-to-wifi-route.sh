@@ -35,6 +35,9 @@ sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 
 sudo ifconfig $wlan $ip_address netmask $netmask
 
+# Remove default route
+sudo ip route del 0/0 dev $wlan &> /dev/null
+
 echo -e "interface=$wlan \n\
 bind-interfaces \n\
 server=8.8.8.8 \n\
