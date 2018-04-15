@@ -71,4 +71,14 @@ It should look like this after filling network details
         psk="password_goes_here"
     }
     
+Configuration for eap should look like this
+
+    network={
+            ssid="SSID_NAME"
+            key_mgmt=WPA-EAP 
+            password="PASSWORD" 
+            eap=PEAP
+            identity="USERNAME" 
+    }
+
 Any Suggestions and PRs are welcomed to make these recepies more useful.
