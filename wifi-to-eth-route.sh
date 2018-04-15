@@ -35,15 +35,13 @@ sudo ip route del 0/0 dev $eth &> /dev/null
 
 sudo systemctl stop dnsmasq
 
+sudo rm -rf /etc/dnsmasq.d/*
+
 echo -e "interface=$eth\n\
 bind-interfaces\n\
 server=8.8.8.8\n\
 domain-needed\n\
 bogus-priv\n\
-dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /etc/dnsmasq.conf
-
-# This file will work if resolveconf package is installed
-# Due to new updates in dnsmasq
-cp /etc/dnsmasq.conf /run/dnsmasq/resolv.conf
+dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /etc/dnsmasq.d/custom-dnsmasq.conf
 
 sudo systemctl start dnsmasq
