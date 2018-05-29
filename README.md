@@ -21,7 +21,7 @@ Give WiFi access to a Non-WiFi device.
 
 Download a recipe to `pi` user's home directory. For example:
 
-    curl -O curl -O https://raw.githubusercontent.com/arpitjindal97/raspbian-recipes/master/wifi-to-eth-route.sh
+    curl -O https://raw.githubusercontent.com/arpitjindal97/raspbian-recipes/master/wifi-to-eth-route.sh
 
 Make the file executable:
 
