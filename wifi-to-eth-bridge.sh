@@ -25,6 +25,8 @@
 eth="eth0"
 wlan="wlan0"
 
+sudo systemctl start network-online.target &> /dev/null
+
 sudo iptables -F
 sudo iptables -t nat -F
 
