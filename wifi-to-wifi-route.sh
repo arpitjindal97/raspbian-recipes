@@ -20,8 +20,8 @@ netmask="255.255.255.0"
 dhcp_range_start="192.168.2.2"
 dhcp_range_end="192.168.2.100"
 dhcp_time="12h"
-wlan0="wlan1" // USB wifi is wlan1
-wlan1="wlan0" // RPi wifi is wlan0
+wlan0="wlan1" # USB wifi is wlan1
+wlan1="wlan0" # RPi wifi is wlan0
 ssid="Raspberry-Hotspot"
 psk="raspberry"
 
