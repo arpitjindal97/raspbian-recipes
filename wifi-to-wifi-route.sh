@@ -40,10 +40,10 @@ sudo iptables -A FORWARD -i $wlan1 -o $wlan0 -j ACCEPT
 
 sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 
-sudo ifconfig $wlan1 $ip_address netmask $netmask
-
 # Remove default route
 sudo ip route del 0/0 dev $wlan1 &> /dev/null
+
+sudo ifconfig $wlan1 $ip_address netmask $netmask
 
 sudo rm -rf /etc/dnsmasq.d/*
 
