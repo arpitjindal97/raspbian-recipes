@@ -76,7 +76,7 @@ WiFi connections are stored at `/etc/wpa_supplicant/wpa_supplicant.conf`. Edit t
 It should look like this after filling network details:
 
     country=GB
-    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    ctrl_interface=/var/run/wpa_supplicant
     update_config=1
     network={
         ssid="Home WiFi"

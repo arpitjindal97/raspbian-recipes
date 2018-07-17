@@ -25,7 +25,7 @@ wlan1="wlan0" # RPi wifi is wlan0
 ssid="Raspberry-Hotspot"
 psk="raspberry"
 
-sudo kill -9 $(ps aux | grep "$wlan1" | grep -v 'grep' | awk '{print $2}')
+sudo kill -9 $(ps aux | grep "$wlan1" | grep -v 'grep' | awk '{print $2}') &> /dev/null
 
 sudo rfkill unblock wlan1 &> /dev/null
 sleep 2
