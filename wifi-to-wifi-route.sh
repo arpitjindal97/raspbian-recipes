@@ -45,14 +45,14 @@ sudo ip route del 0/0 dev $wlan1 &> /dev/null
 
 sudo ifconfig $wlan1 $ip_address netmask $netmask
 
-sudo rm -rf /etc/dnsmasq.d/*
+sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
 echo -e "interface=$wlan1 \n\
 bind-interfaces \n\
 server=8.8.8.8 \n\
 domain-needed \n\
 bogus-priv \n\
-dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /etc/dnsmasq.d/custom-dnsmasq.conf 
+dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /etc/dnsmasq.d/custom-dnsmasq.conf
 
 sudo systemctl restart dnsmasq
 

@@ -37,7 +37,7 @@ sudo ip route del 0/0 dev $eth &> /dev/null
 
 sudo systemctl stop dnsmasq
 
-sudo rm -rf /etc/dnsmasq.d/*
+sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
 echo -e "interface=$eth\n\
 bind-interfaces\n\
