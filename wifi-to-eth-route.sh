@@ -44,6 +44,7 @@ bind-interfaces\n\
 server=8.8.8.8\n\
 domain-needed\n\
 bogus-priv\n\
-dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /etc/dnsmasq.d/custom-dnsmasq.conf
+dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /tmp/custom-dnsmasq.conf
 
+sudo cp /tmp/custom-dnsmasq.conf /etc/dnsmasq.d/custom-dnsmasq.conf
 sudo systemctl start dnsmasq
