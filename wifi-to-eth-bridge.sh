@@ -43,13 +43,13 @@ sudo systemctl stop avahi-daemon
 echo "Killing avahi-daemon"
 sudo killall avahi-daemon &> /dev/null
 
-option=$(cat /etc/avahi/avahi-daemon.conf | grep enable-reflector=yes)
-
 echo "Creating temp avahi conf file"
 cp /etc/avahi/avahi-daemon.conf /tmp/avahi-daemon.conf
+sed -i s/^enable-reflector=no/enable-reflector=yes/ /tmp/avahi-daemon.conf
 
+option=$(cat /tmp/avahi-daemon.conf | grep enable-reflector=yes)
 if [ $option=="" ]; then
-	echo -e '\n[reflector]\nenable-reflector=yes\n' >> /tmp/avahi-daemon.conf
+        echo -e '\n[reflector]\nenable-reflector=yes\n' >> /tmp/avahi-daemon.conf
 fi
 
 echo "Starting parprouted ..."
