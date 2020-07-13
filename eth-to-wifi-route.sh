@@ -44,7 +44,7 @@ sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
 echo -e "interface=$wlan \n\
 bind-interfaces \n\
-server=8.8.8.8 \n\
+server=176.103.130.130 \n\
 domain-needed \n\
 bogus-priv \n\
 dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /etc/dnsmasq.d/custom-dnsmasq.conf
