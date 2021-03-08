@@ -45,7 +45,7 @@ Without desktop (lite version), edit `/etc/rc.local` with root privilege:
 
 And add the following before `exit 0` to start script automatically after reboot:
 
-    bash /home/pi/wifi-to-eth-route.sh
+    bash /home/pi/wifi-to-eth-route.sh &
 
 Be sure to give full path to the file.<br>
 That's it! Reboot to see the changes.
