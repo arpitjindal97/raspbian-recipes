@@ -30,6 +30,8 @@ sudo iptables -A FORWARD -i $eth -o $wlan -j ACCEPT
 
 sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 
+sudo ifconfig $eth down
+sudo ifconfig $eth up
 sudo ifconfig $eth $ip_address netmask $netmask
 
 # Remove default route created by dhcpcd
