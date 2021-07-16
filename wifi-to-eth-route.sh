@@ -17,6 +17,7 @@ netmask="255.255.255.0"
 dhcp_range_start="192.168.2.2"
 dhcp_range_end="192.168.2.100"
 dhcp_time="12h"
+dns_server="1.1.1.1"
 eth="eth0"
 wlan="wlan0"
 
@@ -41,9 +42,9 @@ sudo systemctl stop dnsmasq
 
 sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
-echo -e "interface=$eth\n\
+echo "interface=$eth\n\
 bind-interfaces\n\
-server=176.103.130.130\n\
+server=$dns_server\n\
 domain-needed\n\
 bogus-priv\n\
 dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /tmp/custom-dnsmasq.conf
