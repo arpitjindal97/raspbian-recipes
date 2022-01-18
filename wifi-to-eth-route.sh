@@ -42,11 +42,11 @@ sudo systemctl stop dnsmasq
 
 sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
-echo "interface=$eth\n\
-bind-interfaces\n\
-server=$dns_server\n\
-domain-needed\n\
-bogus-priv\n\
+echo "interface=$eth
+bind-interfaces
+server=$dns_server
+domain-needed
+bogus-priv
 dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /tmp/custom-dnsmasq.conf
 
 sudo cp /tmp/custom-dnsmasq.conf /etc/dnsmasq.d/custom-dnsmasq.conf
