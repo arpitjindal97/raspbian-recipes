@@ -67,4 +67,4 @@ sudo /sbin/ip addr add $(/sbin/ip addr show $wlan | perl -wne 'm|^\s+inet (.*)/|
 sleep 2
 
 echo "Starting avahi-daemon ... "
-avahi-daemon -f /tmp/avahi-daemon.conf &
+sudo avahi-daemon -f /tmp/avahi-daemon.conf &
