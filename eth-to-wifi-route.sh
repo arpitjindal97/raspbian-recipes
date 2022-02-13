@@ -11,15 +11,33 @@
 # Don't forget to change the name of network interface
 # Check them with `ifconfig`
 
-ip_address="192.168.2.1"
+ip_address="192.168.1.1"
 netmask="255.255.255.0"
-dhcp_range_start="192.168.2.2"
-dhcp_range_end="192.168.2.100"
+dhcp_range_start="192.168.1.2"
+dhcp_range_end="192.168.1.100"
 dhcp_time="12h"
 eth="eth0"
 wlan="wlan0"
 ssid="Raspberry-Hotspot"
 psk="raspberry"
+
+which dnsmasq > /dev/null
+if [ $? = 1 ]
+then
+  echo "Please install dnsmasq"
+  echo " $ sudo apt-get install dnsmasq"
+  exit 1
+fi
+which hostapd > /dev/null
+if [ $? = 1 ]
+then
+  echo "Please install hostapd"
+  echo " $ sudo apt-get install hostapd"
+  exit 1
+fi
+echo "Dependencies installed"
+
+
 
 sudo killall wpa_supplicant &> /dev/null
 sudo rfkill unblock wlan &> /dev/null
