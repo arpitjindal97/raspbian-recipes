@@ -21,6 +21,24 @@ wlan="wlan0"
 ssid="Raspberry-Hotspot"
 psk="raspberry"
 
+which dnsmasq > /dev/null
+if [ $? = 1 ]
+then
+  echo "Please install dnsmasq"
+  echo " $ sudo apt-get install dnsmasq"
+  exit 1
+fi
+which hostapd > /dev/null
+if [ $? = 1 ]
+then
+  echo "Please install hostapd"
+  echo " $ sudo apt-get install hostapd"
+  exit 1
+fi
+echo "Dependencies installed"
+
+
+
 sudo killall wpa_supplicant &> /dev/null
 sudo rfkill unblock wlan &> /dev/null
 sleep 2
