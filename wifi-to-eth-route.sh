@@ -42,7 +42,7 @@ sudo systemctl stop dnsmasq
 
 sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
-echo "interface=$eth
+echo -e "interface=$eth
 bind-interfaces
 server=$dns_server
 domain-needed
