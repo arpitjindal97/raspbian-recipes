@@ -12,8 +12,7 @@
 # Don't forget to change the name of network interface
 # Check them with `ifconfig`
 
-ip_address="192.168.2.1"
-netmask="255.255.255.0"
+ip_address_and_network_mask_in_CDIR_notation="192.168.2.1/24"
 dhcp_range_start="192.168.2.2"
 dhcp_range_end="192.168.2.100"
 dhcp_time="12h"
@@ -31,9 +30,9 @@ sudo iptables -A FORWARD -i $eth -o $wlan -j ACCEPT
 
 sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 
-sudo ifconfig $eth down
-sudo ifconfig $eth up
-sudo ifconfig $eth $ip_address netmask $netmask
+sudo ip link set $eth down
+sudo ip link set $eth up
+sudo ip addr add  $ip_address_and_network_mask_in_CDIR_notation dev $eth 
 
 # Remove default route created by dhcpcd
 sudo ip route del 0/0 dev $eth &> /dev/null
